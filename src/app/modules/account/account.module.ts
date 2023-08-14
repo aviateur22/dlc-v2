@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AccountComponent } from './components/account/account.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const dlcAccountRoutes: Routes = [ 
+const accountRoutes: Routes = [ 
   { path: "account", component: AccountComponent, title: "mon compte"} 
 ]
 
@@ -13,8 +13,8 @@ const dlcAccountRoutes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(dlcAccountRoutes)   
+    RouterModule.forChild(accountRoutes)   
 
   ]
 })
-export class DlcAccountModule { }
+export class AccountModule { }

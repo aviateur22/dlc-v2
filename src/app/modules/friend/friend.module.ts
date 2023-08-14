@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FriendComponent } from './components/friend/friend.component';
 
-const dlcFriendRoutes: Routes = [  
+const friendRoutes: Routes = [  
   { path: "friend", component: FriendComponent, title: "gestion de mes amis"},
 ]
 
@@ -13,7 +13,7 @@ const dlcFriendRoutes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(dlcFriendRoutes)
+    RouterModule.forChild(friendRoutes)
   ]
 })
-export class DlcFriendModule { }
+export class FriendModule { }

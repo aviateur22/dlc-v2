@@ -5,9 +5,10 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductService } from './services/product.service';
 
 
-const dlcProductRoutes: Routes = [
+const productRoutes: Routes = [
   { path: "products", component: ProductsComponent, title: "produits en suivi"},
   { path: "product/:id", component: ProductDetailComponent, title: "produits en suivi"},
   { path: "add-product", component: ProductComponent, title: "ajout produit"},
@@ -18,7 +19,8 @@ const dlcProductRoutes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(dlcProductRoutes)
-  ]
+    RouterModule.forChild(productRoutes)
+  ],
+  providers: [ProductService]
 })
-export class DlcProductModule { }
+export class ProductModule { }
