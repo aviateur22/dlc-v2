@@ -1,0 +1,14 @@
+.nav {
+  display: flex;  
+}
+.nav__button {
+  background-image: url('src\assets\images\menu.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  border-radius: 1px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--main_color)!important;
+  cursor: pointer;
+}

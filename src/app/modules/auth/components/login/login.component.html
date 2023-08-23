@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div>  
+  <div>
+    <h2>Connection</h2>
+  </div>
+  
+  <form [formGroup]="loginDataFormGroup" (submit)="login()">
+    <div>
+      <div>
+        <label for="email">email</label>
+        <input formControlName="email" id="email" type="email" placeholder="mon_email@email.com">
+      </div>      
+
+      <!--erreur message-->
+      <div *ngIf="loginDataFormGroup.get('email')?.touched && loginDataFormGroup.get('email')?.errors?.['required']">
+        <p>{{ emailMandatoryMessage }}</p>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <label for="password">mot de passe</label>
+        <input formControlName="password" id="password" type="password" placeholder="mot de passe">
+      </div>
+      
+      <!--erreur message-->
+       <div *ngIf="loginDataFormGroup.get('password')?.touched && loginDataFormGroup.get('password')?.errors?.['required']">
+          <p>{{ passwordMandatoryMessage }}</p>
+      </div>
+    </div>
+
+    <input [disabled]="isSubmitButtonDisable" type="submit" [value]="submitButtonText">
+  </form>
+
+  <div>
+    <p> {{ registerMessage }}</p>
+    <a [routerLink]="'/'+ registerEmailLink">inscription</a>
+
+  </div>
+</div>
