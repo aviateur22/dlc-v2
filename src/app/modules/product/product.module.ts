@@ -26,7 +26,8 @@ const productRoutes: Routes = [
   declarations: [
     ProductComponent,
     HomeComponent,
-    AddProductComponent,    
+    AddProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,

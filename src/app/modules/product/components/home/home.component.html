@@ -1,6 +1,10 @@
 <div>
   <div>
-    
+    <div>
+      <ul *ngFor="let product of products">
+        <app-product (deleteProductEmit)="deleteProduct($event)" (navigateToProductDetailEmit)="navigateToProductDetail($event)" [product]="product"></app-product>
+      </ul>
+    </div>
   </div>
   <div>
     <a [routerLink]="'/'+addProductLink"> ajouter un produit</a>

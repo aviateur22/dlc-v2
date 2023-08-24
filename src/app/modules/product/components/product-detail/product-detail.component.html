@@ -1,1 +1,28 @@
-<p>product-detail works!</p>
+<div>
+  <div>
+    <button (click)="navigateToHomePage()">accueil</button>
+    <h2>détail du produit</h2>
+  </div>
+  <div>
+    <div>
+      <p > produit ouvert depuis: </p>
+      <span>{{product?.numberOfOpenDays}} 
+        jour<ng-container *ngIf="product!.numberOfOpenDays > 1">s</ng-container>
+      </span> 
+    </div>
+  
+    <div>
+      <p>expiration dans:</p>
+      <span>{{product?.numberOfDayLeftBeforeExpired}} 
+        jour<ng-container *ngIf="product!.numberOfDayLeftBeforeExpired > 1">s</ng-container>
+      </span> 
+    </div>
+  
+    <div>
+      <img [src]="productImage" alt="">
+    </div>
+  </div>
+  <div>
+    <button (click)="deleteProduct()">supprimer le produit</button>
+  </div>
+</div>

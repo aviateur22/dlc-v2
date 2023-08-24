@@ -57,7 +57,6 @@ export class AddProductComponent {
 
   saveProduct() {
     this.isSubmitButtonDisable = true;
-    console.log(this.productDataFormFroup.get('openDate')?.value);
     //console.log(this.productDataFormFroup);
 
     if(!this.productDataFormFroup.valid) {

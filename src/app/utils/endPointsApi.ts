@@ -1,4 +1,7 @@
+import { environment } from "src/environments/environment";
+
 export default {
+  uri: environment.domain + environment.api,
   login: {
     url: '/auth/login'
   },
@@ -17,7 +20,14 @@ export default {
   addProduct: {
     url: '/products'
   },
-  getProductsByUser: {
-    url: 'users/product/get-all-by-user-id'
+  findProductsByUser: {
+    url: '/products/user/:userId'
   },
+  findProductByUserIdAndProductId: {
+    url: '/products/:productId/user/:userId'
+  },
+  deleteProductByProductId: {
+    url: '/products/:productId'
+  }
+
 }
