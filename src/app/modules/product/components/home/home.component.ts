@@ -1,10 +1,11 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import frontEndUrl from 'src/app/utils/frontEndUrl';
+
 import { ProductService } from '../../services/product.service';
 import { UserInformationImp } from 'src/app/helpers/UserInformationImp';
 import { Product } from '../../models/product';
-import { Router } from '@angular/router';
-import { UrlHelper } from 'src/app/helpers/UrlHelper';
+
+import frontEndUrl from 'src/app/utils/frontEndUrl';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,7 @@ export class HomeComponent {
   constructor(
     private productService: ProductService,
     private userInformation: UserInformationImp,
-    private router: Router,
-    private urlHelper: UrlHelper
+    private router: Router
   ) {}
 
   ngOnInit(){
@@ -28,19 +28,17 @@ export class HomeComponent {
   }
 
   navigateToProductDetail(product: Product) {
-    const productId: string = product.productId.toString();    
+    const productId: string = product.id.toString();    
     this.router.navigate([frontEndUrl.getProductById.url.replace(":productId", productId)])
   }
 
   deleteProduct(productId: number) {
     if(productId != undefined) {
-      console.log('rr')
       this.productService.delteProduct(productId).subscribe(res=>{
         if(res != false) {
-          this.products = this.products.filter(product=> product.productId != productId);
+          this.products = this.products.filter(product=> product.id != productId);
         }
       });
     }
   }
-
 }

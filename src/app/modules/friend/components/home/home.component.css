@@ -1,0 +1,42 @@
+.friends {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - var(--nav_height));
+}
+
+.friends__list__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.friends__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.friends__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.friends__link__container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.friends--link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+}

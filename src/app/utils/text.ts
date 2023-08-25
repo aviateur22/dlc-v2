@@ -19,6 +19,10 @@ export default {
     fr: 'DLC | accès interdit',
     en: 'DLC | forbidden'
   },
+  menuPageTitle: {
+    fr: 'DLC | menu',
+    en: 'DLC | menu'
+  },
   loginPageTitle: {
     fr: 'DLC | connexion',
     en: 'DLC | connexion'
@@ -46,6 +50,14 @@ export default {
   productDetailPageTitle: {
     fr: 'DLC | détail produit',
     en: 'DLC | product detail'
+  },
+  friendHomePageTitle:{
+    fr: 'DLC | amis',
+    en: 'DLC | friends'
+  },
+  friendAddPageTitle: {
+    fr: 'DLC | ajout d\'un ami',
+    en: 'DLC | add new friend'
   },
   forbiddenAction: {
     fr: 'vous n\'êtes pas autorisé à faire cette action',

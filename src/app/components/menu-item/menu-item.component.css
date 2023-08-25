@@ -1,0 +1,27 @@
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.menu__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;  
+  border: 1px solid var(--main_color);
+}
+
+.menu__text {
+  padding: 5px 0px;
+  color: var(--main_color);
+}
+
+.menu__text::first-letter {
+  text-transform: uppercase;
+}

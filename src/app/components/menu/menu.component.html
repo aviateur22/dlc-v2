@@ -1,0 +1,12 @@
+<div class="menu__container">
+  <div class="header__container">    
+    <a [routerLink]="'/'+ homePageLink">annuler</a>
+    <h2>compte</h2>
+  </div> 
+  <div class="menu__button__container">
+    <app-menu-item linkName="produits" imageButtonPath="assets\images\food.svg" [link]="homePageLink"></app-menu-item>
+    <app-menu-item linkName="amis" imageButtonPath="assets\images\headWithColor.svg" [link]="friendPageLink"></app-menu-item>
+    <app-menu-item linkName="compte" imageButtonPath="assets\images\valise.svg" [link]="homePageLink"></app-menu-item>
+    <button (click)="logout()" class="button leave--button">quitter</button>
+  </div>
+</div>

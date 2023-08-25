@@ -31,6 +31,6 @@ export class ProductComponent {
   deleteProduct(event: Event) {   
     event.stopPropagation();
     this.isDeleteButtonDisable = true;    
-    this.deleteProductEmit.emit(this.product?.productId);
+    this.deleteProductEmit.emit(this.product?.id);
   }
 }

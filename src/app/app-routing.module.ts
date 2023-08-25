@@ -11,9 +11,11 @@ import { HomeComponent } from './components/home/home.component';
 
 import frontEndUrl from './utils/frontEndUrl';
 import text from 'src/app/utils/text';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 const routes: Routes = [
+  { path: frontEndUrl.menu.url, component: MenuComponent, title: text.menuPageTitle[environment.language]},
   { path: frontEndUrl.forbidden.url,  component: ForbiddenComponent, title: text.forbiddenPageTitle[environment.language]},
   { path: frontEndUrl.error.url, component: ErrorComponent, title: text.errorPageTitle[environment.language]},
   { path: frontEndUrl.success.url, component: SuccessComponent, title: text.successPageTitle[environment.language]},

@@ -1,0 +1,48 @@
+.product {
+  display: flex;
+  width: 100%;
+  max-width: var(--desktop);
+  height: 100px;  
+  padding: 2px 20px 2px 2px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;  
+  background-color: white;
+  justify-content: space-between;  
+}
+
+.product__image__container {
+  width: 150px;
+  height: 100%;  
+  max-width: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.product__image {
+  height: auto;
+  width: 100%;
+  object-position: center center;
+}
+
+.product__text { 
+  padding: 0px 20px;
+  max-width: 450px;
+  text-align: center;
+}
+
+.product__delete__button {
+  background-color: var(--main_color);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("src\assets\images\basket.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+}

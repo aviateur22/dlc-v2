@@ -1,1 +1,18 @@
-<p>friend works!</p>
+<div class="friend">
+  <div class="friend__email"> {{friend.email}}</div>
+  <div class="friend__button__container">
+    <button class="button button--rounded trash--image" type="button" (click)="deleteFriend()"></button>
+    
+    <button class="button button--rounded validate--image" 
+      [disabled]="isAddFriendButtonDisable" 
+      *ngIf="isAddFriendButtonVisible" 
+      type="button" (click)="addFriend()">
+    </button>
+
+    <button class="button button--rounded validate--image" 
+      [disabled]="isAcceptFriendButtonDisable" 
+      *ngIf="isAcceptFriendButtonVisible" 
+      type="button" (click)="acceptFriend()">
+    </button>
+  </div>
+</div>

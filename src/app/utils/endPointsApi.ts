@@ -2,6 +2,7 @@ import { environment } from "src/environments/environment";
 
 export default {
   uri: environment.domain + environment.api,
+  
   login: {
     url: '/auth/login'
   },
@@ -28,6 +29,18 @@ export default {
   },
   deleteProductByProductId: {
     url: '/products/:productId'
+  },
+  findFriendsByUserId: {
+    url: '/friends/user/:userId'
+  },
+  addFriend: {
+    url: '/friends'
+  },
+  deleteFriendByFriendId: {
+    url: '/friends/:friendId'
+  },
+  acceptFriend: {
+    url: '/friends/update'
   }
 
 }

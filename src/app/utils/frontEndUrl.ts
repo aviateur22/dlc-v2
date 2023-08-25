@@ -14,6 +14,9 @@ export default {
   success: {
     url: 'success'
   },
+  menu: {
+    url: 'dlc-menu'
+  },
   login: {
     url: 'auth/login'
   },
@@ -34,6 +37,12 @@ export default {
   },
   getProductById: {
     url:'user/product/:productId'
+  },
+  friendHome: {
+    url: 'user/friends'
+  },
+  addFriend: {
+    url: 'user/friend/add-friend'
   }
   
 

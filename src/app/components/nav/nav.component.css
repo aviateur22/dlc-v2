@@ -1,12 +1,22 @@
 .nav {
   display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav_height);
+  padding: 0px 10px;
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
+
+.nav h2 {
+  width: 100%;
+  text-align: center;
+}
+
 .nav__button {
-  background-image: url('src\assets\images\menu.svg');
+  background-image: url('src\assets\images\head.svg');
   background-repeat: no-repeat;
-  background-position: center center;
-  
-  border-radius: 1px;
+  background-position: center center;  
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   background-color: var(--main_color)!important;

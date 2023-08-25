@@ -1,0 +1,18 @@
+.container {
+  background-color: red;
+  min-height: 100vh; 
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner__container {
+  background-color: green;
+  width: 100%;
+  min-height: 100vh; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

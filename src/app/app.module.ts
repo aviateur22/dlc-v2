@@ -17,6 +17,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { SuccessComponent } from './components/success/success.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NavComponent } from './components/nav/nav.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { NavComponent } from './components/nav/nav.component';
     ErrorComponent,
     SuccessComponent,
     LogoutComponent,
-    NavComponent
+    NavComponent,
+    MenuComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,

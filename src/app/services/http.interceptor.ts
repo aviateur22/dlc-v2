@@ -36,12 +36,19 @@ export class HandlerHttpInterceptor implements HttpInterceptor {
           return event;
         },
         error: error=> {
-          const errorHttp: HttpErrorResponse = error;      
-          const errorStatus: number = parseInt(errorHttp.status.toString(), 10);
+          if(typeof (error.error.errorMessage) != 'undefined') {
+            const errorHttp: HttpErrorResponse = error;      
+            const errorStatus: number = parseInt(errorHttp.status.toString(), 10);
+            return this.flashMessageService.updateFlashMessage({
+              isError: true,
+              message: error.error.errorMessage
+            });
+          }
+
           return this.flashMessageService.updateFlashMessage({
             isError: true,
-            message: error.error.errorMessage
-          })
+            message: "impossible de se connnecter au serveur"
+          });
         }
       }        
     ));
