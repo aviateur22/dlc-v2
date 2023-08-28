@@ -9,7 +9,7 @@ export default {
     url: "forbidden"
   },
   error: {
-    url: 'error-detection'
+    url: 'error'
   },
   success: {
     url: 'success'

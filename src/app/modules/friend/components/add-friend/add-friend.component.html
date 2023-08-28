@@ -1,5 +1,5 @@
-<div class="friend">
-  <div class="friend__inner__container">
+<div class="main__container">
+  <div class="inner__container">
     <div class="header__container">
       <a [routerLink]="'/'+friendHomeLink">annuler</a>
       <h2>ajout d'un ami</h2>
@@ -11,12 +11,12 @@
           <input class="input" formControlName="email" type="email" id="email" placeholder="email@hotmail.fr">
         </div>
         <!--erreur message-->
-        <div>
-          <p>{{ inputErrorMessage }}</p>
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="addFriendDataFormGroup.get('email')?.touched && addFriendDataFormGroup.get('email')?.errors?.['required']">{{ inputErrorMessage }}</p>
         </div>
       </div>
   
-      <div>
+      <div class="button__container">
           <input class="button friend--add--button" type="submit" value="ajouter">
       </div>
     </form>

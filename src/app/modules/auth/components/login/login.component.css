@@ -1,0 +1,15 @@
+.login {
+  padding: 20px;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 400px;
+}
+
+.main--color {
+  display: block;
+  color: var(--main_color);
+}
+
+@media screen and (min-width: 768px) {
+  
+}

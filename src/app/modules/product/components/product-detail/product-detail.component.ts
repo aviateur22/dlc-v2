@@ -16,6 +16,7 @@ export class ProductDetailComponent {
   product: Product | undefined;
   productImage!: string;
   isDeleteButtonDisable: boolean = false;
+  productHomeLink: string = frontEndUrl.userHome.url;
 
 
   constructor(
@@ -50,8 +51,5 @@ export class ProductDetailComponent {
       this.isDeleteButtonDisable = false;
       this.router.navigate([frontEndUrl.userHome.url]);
     });
-  }
-  navigateToHomePage() {
-    this.router.navigate([frontEndUrl.userHome.url]);
   }
 }

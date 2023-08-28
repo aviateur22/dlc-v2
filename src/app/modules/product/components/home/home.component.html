@@ -1,16 +1,18 @@
-<div class="products">  
-  <div class="header__container">    
-    <h2>Liste des produits</h2>
-  </div> 
-  <div class="products__list__container">
-    <ul class="products__list">
-      <li class="products__item" *ngFor="let product of products" >
-        <app-product class="product__app" (deleteProductEmit)="deleteProduct($event)" (navigateToProductDetailEmit)="navigateToProductDetail($event)" [product]="product"></app-product>
-      </li>
-      
-    </ul>
-  </div>  
-  <div class="products__link__container">
-    <a class="products__link__add" [routerLink]="'/'+addProductLink"> Ajouter un produit</a>
+<div class="main__container">
+  <div class="inner__container">  
+    <div class="header__container">    
+      <h2>Liste des produits</h2>
+    </div> 
+    <div class="products__list__container">
+      <ul class="products__list">
+        <li class="products__item" *ngFor="let product of products" >
+          <app-product class="product__app" (deleteProductEmit)="deleteProduct($event)" (navigateToProductDetailEmit)="navigateToProductDetail($event)" [product]="product"></app-product>
+        </li>
+        
+      </ul>
+    </div>  
+    <div class="button__container">
+      <a class="products__link__add" [routerLink]="'/'+addProductLink"> Ajouter un produit</a>
+    </div>
   </div>
 </div>

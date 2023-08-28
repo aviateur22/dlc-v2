@@ -1,15 +1,28 @@
-.nav {
+.nav {  
   display: flex;  
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   height: var(--nav_height);
   padding: 0px 10px;
-  border-bottom: 1px solid rgb(219, 219, 219);
+  border-bottom: 1px solid rgb(219, 219, 219);  
+  width: 100%;
+}
+
+.inner__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--desktop);
 }
 
 .nav h2 {
   width: 100%;
-  text-align: center;
+  color: var(--main_color);
+  text-transform: uppercase;
+  font-size: var(--title_mobile);
+  font-weight: var(--font_heavy);
+  padding-left: 20px;
 }
 
 .nav__button {

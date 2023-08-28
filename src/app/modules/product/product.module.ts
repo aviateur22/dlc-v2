@@ -15,6 +15,7 @@ import { AdminGuard } from './services/admin.guard';
 
 import frontEndUrl from 'src/app/utils/frontEndUrl';
 import text from 'src/app/utils/text';
+import { IsProductExpiredPipe } from './pipe/is-product-expired.pipe';
 
 const productRoutes: Routes = [  
   { path: frontEndUrl.getProductById.url, component: ProductDetailComponent, title: text.userHomePageTitle[environment.language], canActivate: [ProductGuard]},
@@ -27,7 +28,8 @@ const productRoutes: Routes = [
     ProductComponent,
     HomeComponent,
     AddProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    IsProductExpiredPipe
   ],
   imports: [
     CommonModule,

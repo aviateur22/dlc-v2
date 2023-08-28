@@ -11,6 +11,12 @@
   justify-content: space-between;  
 }
 
+.is--expired {
+  background-color: rgba(243, 49, 0, 0.3);
+  color: red;
+  font-weight: var(--font_medium);
+}
+
 .product__image__container {
   width: 150px;
   height: 100%;  

@@ -1,11 +1,3 @@
-.friends {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: calc(100vh - var(--nav_height));
-}
-
 .friends__list__container {
   display: flex;
   justify-content: center;

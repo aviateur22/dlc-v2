@@ -21,9 +21,11 @@ export class AddProductComponent {
   isImageSelected: boolean = false;  
   previewSelectedImageBase64: string ='';
 
-  openDateMandatoryMessage: string = '';
-  expiredDateMandatoryMessage: string = '';
-  imageMandatoryMessage: string = '';
+  openDateMandatoryMessage: string = 'date d\'ouverture obligatoire';
+  expiredDateMandatoryMessage: string = 'DLC obligatoire';
+  imageMandatoryMessage: string = 'selection image manquante';
+
+  productHomeLink: string = frontEndUrl.userHome.url;
 
   constructor(
     private fb: FormBuilder, 
@@ -42,7 +44,8 @@ export class AddProductComponent {
     });
   }
 
-  loadSelectedImage(file: File | undefined){
+  loadSelectedImage(file: File | undefined){    
+    this.isImageSelected = false;
     if(file){
       this.imageSelected = file;
       const fileReader = new FileReader();

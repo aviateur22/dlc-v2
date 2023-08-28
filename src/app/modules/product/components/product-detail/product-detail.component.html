@@ -1,28 +1,43 @@
-<div>
-  <div>
-    <button (click)="navigateToHomePage()">accueil</button>
-    <h2>détail du produit</h2>
-  </div>
-  <div>
-    <div>
-      <p > produit ouvert depuis: </p>
-      <span>{{product?.numberOfOpenDays}} 
-        jour<ng-container *ngIf="product!.numberOfOpenDays > 1">s</ng-container>
-      </span> 
+<div class="main__container">
+  <div class="inner__container max--size">
+    <div class="product">      
+      <div class="header__container">
+        <a [routerLink]="'/'+productHomeLink">accueil</a>
+        <h2>détail du produit</h2>
+      </div>
+      <div>
+        <div class="text__container">
+          <p> produit ouvert depuis: </p>
+        <span>{{product?.numberOfOpenDays}} 
+          jour<ng-container *ngIf="product!.numberOfOpenDays > 1">s</ng-container>          
+          - le {{product?.productOpenDate | date: 'dd/MM/yyyy'}}
+        </span>         
+        <span> </span>
+      </div>
+      
+      <div class="text__container" *ngIf="product!.numberOfDayLeftBeforeExpired > 0; else expired">
+        <p>expiration dans:</p>
+        <span>{{product?.numberOfDayLeftBeforeExpired}} 
+          jour<ng-container *ngIf="product!.numberOfDayLeftBeforeExpired < 1">s</ng-container>
+          - le {{product?.productEndDate | date: 'dd/MM/yyyy'}}
+        </span> 
+        
+        <span> </span>
+      </div>
+      <ng-template #expired>
+        <div class="text__container expired">
+          <p>produit expiré depuis le:</p>      
+          <span> {{product?.productEndDate | date: 'dd/MM/yyyy'}}</span>
+        </div>
+      </ng-template>
+      
+      <div class="product__image__container">
+        <img class="product__image" [src]="productImage" alt="">
+      </div>
     </div>
-  
     <div>
-      <p>expiration dans:</p>
-      <span>{{product?.numberOfDayLeftBeforeExpired}} 
-        jour<ng-container *ngIf="product!.numberOfDayLeftBeforeExpired > 1">s</ng-container>
-      </span> 
-    </div>
-  
-    <div>
-      <img [src]="productImage" alt="">
+      <button class="button" (click)="deleteProduct()">supprimer le produit</button>
     </div>
   </div>
-  <div>
-    <button (click)="deleteProduct()">supprimer le produit</button>
-  </div>
+</div>
 </div>

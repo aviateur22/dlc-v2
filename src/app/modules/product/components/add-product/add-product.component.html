@@ -1,64 +1,73 @@
-<div>
-  <div class="header">
-
+<div class="main__container">
+  <div class="inner__container">
+    <div class="header__container">
+      <a [routerLink]="'/'+productHomeLink">accueil</a>
+      <h2>ajout d'un nouveau produit</h2>
+    </div>
+    <form class="form" [formGroup]="productDataFormFroup" (submit)="saveProduct()">
+      <!--date ouverture-->
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="openDate">date d'ouverture</label>
+          <input class="input" formControlName="openDate" [value]="openDate| date:'yyyy-MM-dd'" id="openDate" type="date" >
+        </div>      
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="productDataFormFroup.get('openDate')?.touched && productDataFormFroup.get('openDate')?.errors?.['required']">
+            {{ openDateMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+  
+      <!--date expiration-->
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="expiredDate">date d'expiration</label>
+          <input class="input" formControlName="expiredDate" [value]="expiredDate| date:'yyyy-MM-dd'" id="expiredDate" type="date">
+        </div>      
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="productDataFormFroup.get('expiredDate')?.touched && productDataFormFroup.get('expiredDate')?.errors?.['required']">
+            {{ expiredDateMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+  
+      <!--image-->
+      <div class="main__image__container">
+        <!--Select image-->
+        <input formControlName="image"  #inputFile accept="image/*" type="file" (change)="loadSelectedImage(inputFile?.files?.[0])" style="display:none;" />
+          
+        <!-- Preview image-->
+        <div class="product__image__container" *ngIf="isImageSelected; else defaultImage">
+          <img class="product__image" [src]="previewSelectedImageBase64" alt="productImage.fileName">
+        </div>       
+  
+        <!--Image par default si pas de sélection-->
+        <ng-template #defaultImage>
+          <div class="product__image__container">
+            <svg width="181" height="136" viewBox="0 0 181 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H181V136H0V0Z" fill="#777777"/>
+              <rect x="59" y="14" width="30" height="30" rx="15" fill="#F4F4F4"/>
+              <path d="M46.9296 56.814L67.0763 85.0558L107.808 29L170 121H84.8592H9L46.9296 56.814Z" fill="#F4F4F4"/>
+            </svg>
+          </div>                    
+        </ng-template>
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="productDataFormFroup.get('image')?.touched && productDataFormFroup.get('image')?.errors?.['required']">
+            {{ imageMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+      <!--Button container-->
+      <div class="button__container">   
+       <input class="button" [disabled]="isSubmitButtonDisable"  type="submit" value="ajouter le produit">
+       <input class="button secondary" (click)="inputFile.click()" type="button" value="sélectionner une image">
+      </div>
+    </form>
   </div>
-  <form [formGroup]="productDataFormFroup" (submit)="saveProduct()">
-    <!--date ouverture-->
-    <div>
-      <div>
-        <label for="openDate">date d'ouverture</label>
-        <input formControlName="openDate" [value]="openDate| date:'yyyy-MM-dd'" id="openDate" type="date" >
-      </div>      
-
-      <!--erreur message-->
-      <div *ngIf="productDataFormFroup.get('openDate')?.touched && productDataFormFroup.get('openDate')?.errors?.['required']">
-        <p>{{ openDateMandatoryMessage }}</p>
-      </div>
-    </div>
-
-    <!--date expiration-->
-    <div>
-      <div>
-        <label for="expiredDate">date d'expiration</label>
-        <input formControlName="expiredDate" [value]="expiredDate| date:'yyyy-MM-dd'" id="expiredDate" type="date">
-      </div>      
-
-      <!--erreur message-->
-      <div *ngIf="productDataFormFroup.get('expiredDate')?.touched && productDataFormFroup.get('expiredDate')?.errors?.['required']">
-        <p>{{ expiredDateMandatoryMessage }}</p>
-      </div>
-    </div>
-
-    <!--image-->
-    <div>
-      <!--Select image-->
-      <input formControlName="image"  #inputFile accept="image/*" type="file" (change)="loadSelectedImage(inputFile?.files?.[0])" style="display:none;" />
-        
-      <!-- Preview image-->
-      <div class="product__image__container" *ngIf="isImageSelected; else defaultImage">
-        <img class="product__image__preview" [src]="previewSelectedImageBase64" alt="productImage.fileName">
-      </div>
-
-       <!--Image par default si pas de sélection-->
-       <ng-template #defaultImage>
-        <div class="product__default__image">
-          <svg width="181" height="136" viewBox="0 0 181 136" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0H181V136H0V0Z" fill="#777777"/>
-            <rect x="59" y="14" width="30" height="30" rx="15" fill="#F4F4F4"/>
-            <path d="M46.9296 56.814L67.0763 85.0558L107.808 29L170 121H84.8592H9L46.9296 56.814Z" fill="#F4F4F4"/>
-          </svg>
-        </div>                    
-      </ng-template>
-
-      <!--erreur message-->
-      <div *ngIf="productDataFormFroup.get('image')?.touched && productDataFormFroup.get('image')?.errors?.['required']">
-        <p>{{ imageMandatoryMessage }}</p>
-      </div>
-    </div>
-    <!--Button container-->
-    <div class="button__container">   
-     <input [disabled]="isSubmitButtonDisable"  type="submit" value="ajouter le produit">
-     <input (click)="inputFile.click()" type="button" value="sélectionner une image">
-    </div>
-  </form>
 </div>

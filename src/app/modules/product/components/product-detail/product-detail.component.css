@@ -1,0 +1,41 @@
+.product__image__container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  margin: 20px 0px;
+}
+
+.product{
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.product__image {
+  height: auto;
+  width: 100%;
+  object-position: center center; 
+}
+
+.text__container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px
+}
+
+.expired {
+  color: red;
+  font-weight: var(--font_medium);
+}
+
+@media screen and (min-width: 768px) {
+  .text__container {
+   flex-direction: row;
+  }
+}

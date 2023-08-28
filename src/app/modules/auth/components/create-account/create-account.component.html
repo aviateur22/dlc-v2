@@ -1,48 +1,54 @@
-<div> 
-  <div>
-    <h2>création du compte pour {{ email }}</h2>
-  </div>
-  
-  <form [formGroup]="createAccountDataFormGroup" (submit)="createAccount()">
+<div class="main__container main--center">
+  <div class="inner__container inner--center">
+    <div class="header__container">
+      <h2>création du compte pour {{ email }}</h2>
+    </div>
     
-    <div>
-      <div>
-        <label for="password">mot de passe</label>
-        <input formControlName="password" id="password" type="password" placeholder="mon_mot_de_passe">
-      </div>
-
-      <!--erreur message-->
-      <div *ngIf="createAccountDataFormGroup.get('password')?.touched && createAccountDataFormGroup.get('password')?.errors?.['required']">
-        <p>{{ passwordMandatoryMessage }}</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <label for="confirmPassword">confirmation mot de passe</label>
-        <input formControlName="confirmPassword" id="confirmPassword" type="password" placeholder="mon_mot_de_passe">
-      </div>
-
-      <!--erreur message-->
-      <div *ngIf="createAccountDataFormGroup.get('confirmPassword')?.touched && createAccountDataFormGroup.get('confirmPassword')?.errors?.['required']">
-        <p>{{ confirmPasswordMandatoryMessage }}</p>
-      </div>
-    </div>
-
-    <div>
-      <div>
-        <label for="token">code de confirmation</label>
-        <input formControlName="token" id="token" type="text" placeholder="mon_mot_de_passe">
-      </div>
-
-      <!--erreur message-->
-      <div *ngIf="createAccountDataFormGroup.get('token')?.touched && createAccountDataFormGroup.get('token')?.errors?.['required']">
-        <p>{{ codeConfirmation }}</p>
-      </div>
-    </div>
-
-    <input [disabled]="isSubmitButtonDisable" type="submit" [value]="submitButtonText">
-  </form>
-
+    <form class="form" [formGroup]="createAccountDataFormGroup" (submit)="createAccount()">
+      
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="password">mot de passe</label>
+          <input class="input" formControlName="password" id="password" type="password" placeholder="mon_mot_de_passe">
+        </div>
   
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="createAccountDataFormGroup.get('password')?.touched && createAccountDataFormGroup.get('password')?.errors?.['required']"> 
+            {{ passwordMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+  
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="confirmPassword">confirmation mot de passe</label>
+          <input class="input" formControlName="confirmPassword" id="confirmPassword" type="password" placeholder="mon_mot_de_passe">
+        </div>
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="createAccountDataFormGroup.get('confirmPassword')?.touched && createAccountDataFormGroup.get('confirmPassword')?.errors?.['required']">
+            {{ confirmPasswordMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+  
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="token">code de confirmation</label>
+          <input class="input" formControlName="token" id="token" type="text" placeholder="mon_mot_de_passe">
+        </div>
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="createAccountDataFormGroup.get('token')?.touched && createAccountDataFormGroup.get('token')?.errors?.['required']">
+            {{ codeConfirmation }}
+          </p>
+        </div>
+      </div>
+  
+      <input class="button" [disabled]="isSubmitButtonDisable" type="submit" [value]="submitButtonText">
+    </form>
+  </div>  
 </div>

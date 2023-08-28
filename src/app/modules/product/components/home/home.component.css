@@ -1,11 +1,3 @@
-.products {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
- 
-  height: calc(100vh - var(--nav_height));  
-}
-
 .products__list__container {
   display: flex;
   width: 100%;

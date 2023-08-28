@@ -10,11 +10,15 @@ import {
 import { Observable, tap } from 'rxjs';
 import { FlashMessageService } from './flash-message.service';
 import { LocalStorageService } from './local-storage.service';
+import { AuthService } from '../modules/auth/services/auth.service';
 
 @Injectable()
 export class HandlerHttpInterceptor implements HttpInterceptor {
 
-  constructor(private flashMessageService: FlashMessageService, private localStorageService: LocalStorageService) {}
+  constructor(
+    private authService: AuthService,
+    private flashMessageService: FlashMessageService,
+    private localStorageService: LocalStorageService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
@@ -39,6 +43,16 @@ export class HandlerHttpInterceptor implements HttpInterceptor {
           if(typeof (error.error.errorMessage) != 'undefined') {
             const errorHttp: HttpErrorResponse = error;      
             const errorStatus: number = parseInt(errorHttp.status.toString(), 10);
+
+            if(errorStatus === 401) {
+              this.authService.logout().subscribe();
+
+              return this.flashMessageService.updateFlashMessage({
+                isError: true,
+                message: "merci de vous reconnecter"
+              });
+            }
+
             return this.flashMessageService.updateFlashMessage({
               isError: true,
               message: error.error.errorMessage

@@ -12,7 +12,7 @@ import { UserInformationImp } from 'src/app/helpers/UserInformationImp';
 })
 export class AddFriendComponent {
   friendHomeLink: string = frontEndUrl.friendHome.url;
-  inputErrorMessage: string = "";
+  inputErrorMessage: string = "email obligatire";
   userId: number = this.userInformation.getUserInformation().id;
   addFriendDataFormGroup: FormGroup = new FormGroup({});
   isSubmitButtonDisable: boolean = true;

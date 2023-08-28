@@ -8,11 +8,13 @@ import frontEndUrl from 'src/app/utils/frontEndUrl';
   selector: 'app-nav',
   template: `
     <nav class="nav">
-      <h2> DLC </h2>
-      <div *ngIf="!isLoggedIn">
-        <a [routerLink]="'/'+ loginPageLink">connexion</a>
+      <div class="inner__nav">
+        <h2> DLC </h2>
+        <div *ngIf="!isLoggedIn">
+          <a [routerLink]="'/'+ loginPageLink">connexion</a>
+        </div>
+        <div (click)="navigateToMenu()" class="nav__button" *ngIf="isLoggedIn"></div>
       </div>
-      <div (click)="navigateToMenu()" class="nav__button" *ngIf="isLoggedIn"></div>     
     </nav>
   `,
   styleUrls: ['./nav.component.css']

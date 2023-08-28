@@ -1,7 +1,9 @@
-<div class="product" (click)="navigateToProductDetail()">
+<div class="product {{ product!.numberOfDayLeftBeforeExpired | isProductExpired }}" (click)="navigateToProductDetail()">
   <div class="product__image__container">
     <img class="product__image" [src]="productImage" alt="">
   </div>
   <p class="product__text"> produit ouvert depuis : {{product?.numberOfOpenDays}} jour<ng-container *ngIf="product!.numberOfOpenDays > 1">s</ng-container></p>
-  <button class="product__delete__button" (click)="deleteProduct($event)" type="button"></button>
+  <div class="button__container">
+    <button class="button button--rounded trash--image" (click)="deleteProduct($event)" type="button"></button>
+  </div>
 </div>

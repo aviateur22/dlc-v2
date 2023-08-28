@@ -1,0 +1,37 @@
+.flash__container {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.flash__list {
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.flash__item {    
+  text-align: center;
+  padding: 8px; 
+  width: 100%;
+  max-width: var(--desktop); 
+  border-radius: 10px;
+  font-weight: var(--font_medium);
+}
+
+.is--error {
+  color: red;
+  border: 1px solid red;
+  
+}
+
+.is--success {
+  color: green;
+  border: 1px solid green;
+}

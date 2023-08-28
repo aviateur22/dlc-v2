@@ -5,9 +5,9 @@ import { FlashMessageService } from 'src/app/services/flash-message.service';
 @Component({
   selector: 'app-flash-message',
   template: `
-    <div>
-      <ul>
-        <li *ngFor="let message of flashMessages"> {{message.message}}</li>
+    <div class="flash__container">      
+      <ul class="flash__list">
+        <li class="" class="flash__item {{ message.isError | flashMessageCategory}}" *ngFor="let message of flashMessages"> {{message.message}}</li>
     </ul>
   </div>
   `,

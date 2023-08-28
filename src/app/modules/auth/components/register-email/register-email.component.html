@@ -1,22 +1,26 @@
-<div>
-  <div>
-    <h2>Inscription</h2>
-  </div>
-  
-  <form [formGroup]="registerEmailDataFormGroup" (submit)="registerEmail()">
-    <div>
-      <div>
-        <label for="email">email</label>
-        <input formControlName="email" id="email" type="email" placeholder="mon_email@email.com">
-      </div>
-
-      <!--erreur message-->
-      <div *ngIf="registerEmailDataFormGroup.get('email')?.touched && registerEmailDataFormGroup.get('email')?.errors?.['required']">
-        <p>{{ emailMandatoryMessage }}</p>
-      </div>
+<div class="main__container main--center">
+  <div class="inner__container inner--center">
+    <div class="header__container">
+      <h2>Inscription</h2>
     </div>
-
-    <input [disabled]="isSubmitButtonDisable" type="submit" [value]="submitButtonText">
-  </form>
+    
+    <form class="form" [formGroup]="registerEmailDataFormGroup" (submit)="registerEmail()">
+      <div class="input__container">
+        <div class="input__data__container">
+          <label class="label" for="email">email</label>
+          <input class="input" formControlName="email" id="email" type="email" placeholder="mon_email@email.com">
+        </div>
+  
+        <!--erreur message-->
+        <div class="text__error__container">
+          <p class="text--error" *ngIf="registerEmailDataFormGroup.get('email')?.touched && registerEmailDataFormGroup.get('email')?.errors?.['required']">
+            {{ emailMandatoryMessage }}
+          </p>
+        </div>
+      </div>
+  
+      <input class="button" [disabled]="isSubmitButtonDisable" type="submit" [value]="submitButtonText">
+    </form>
+  </div>
 </div>
 
